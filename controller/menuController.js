@@ -10,7 +10,18 @@ const getMenu = (req, res, next) => {
 };
 
 const addMenuItem = (req, res, next) => {
+    const foodName = req.body.foodName;
+    const type = req.body.type;
+    const price = req.body.price;
 
+    res.status(201).json({
+        message: 'Menu item created successfully!',
+        menuItem: {
+            foodName: foodName,
+            type: type,
+            price: price
+        }
+    });
 }
 
 module.exports.addMenuItem = addMenuItem;
